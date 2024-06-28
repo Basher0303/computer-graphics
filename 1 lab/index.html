@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="src/bootstrap.css" rel="stylesheet" />
+        <title>Изгиб полигона</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            canvas {
+                display: block;
+                margin: 20px auto 0;
+                border: 1px dotted #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container d-flex flex-column justify-content-center vh-100">
+            <canvas id="canvas" style="border: 1px solid black"></canvas>
+            <h4 class="text-center mt-3" id="hint-label">Нарисуйте полигон используя мышку</h4>
+            <div class="d-flex align-items-center justify-content-center mt-5">
+                <div class="d-flex flex-column ms-4 h-100 justify-content-end">
+                    <h5>Угол изгиба по вертикали</h5>
+                    <div class="d-flex align-items-center">
+                        <input
+                            type="range"
+                            disabled
+                            class="form-range"
+                            style="width: 200px"
+                            value="0"
+                            min="-90"
+                            max="90"
+                            id="angle-vertical-range"
+                        />
+                        <input
+                            type="number"
+                            disabled
+                            class="form-control ms-3"
+                            style="width: 70px"
+                            value="0"
+                            min="-90"
+                            max="90"
+                            id="angle-vertical-input"
+                        />
+                    </div>
+                </div>
+                <div class="d-flex flex-column ms-4 h-100 justify-content-end">
+                    <h5>Угол изгиба по горизонтали</h5>
+                    <div class="d-flex align-items-center">
+                        <input
+                            type="range"
+                            disabled
+                            class="form-range"
+                            style="width: 200px"
+                            value="0"
+                            min="-90"
+                            max="90"
+                            id="angle-horizontal-range"
+                        />
+                        <input
+                            type="number"
+                            disabled
+                            class="form-control ms-3"
+                            style="width: 70px"
+                            value="0"
+                            min="-90"
+                            max="90"
+                            id="angle-horizontal-input"
+                        />
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column ms-4 h-100 justify-content-end">
+                    <h5>Цвет контура полигона</h5>
+                    <input
+                        type="color"
+                        class="form-control"
+                        style="height: 38px"
+                        value="#000000"
+                        id="color-stroke-input"
+                    />
+                </div>
+                <div class="d-flex flex-column ms-4 h-100 justify-content-end">
+                    <h5>Цвет заливки полигона</h5>
+                    <input
+                        type="color"
+                        class="form-control"
+                        style="height: 38px"
+                        value="#ff0000"
+                        id="color-fill-input"
+                    />
+                </div>
+                <div class="d-flex flex-column ms-4 h-100 justify-content-end">
+                    <button type="button" class="btn btn-danger" id="remove-btn" style="min-width: 155px">
+                        Удалить полигон
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="src/script.js"></script>
+</html>
